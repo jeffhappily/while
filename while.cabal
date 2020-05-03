@@ -4,16 +4,16 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 9406d590f662616555137a1d0d674362144009258ee3cb52dd4c8201a8be3012
+-- hash: c70f93bcb5eb5877d01f2ac0beb224fc7458ad37656d2999ec53d16aad60550a
 
 name:           while
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/while#readme>
-homepage:       https://github.com/githubuser/while#readme
-bug-reports:    https://github.com/githubuser/while/issues
-author:         Author name here
+description:    Please see the README on GitHub at <https://github.com/jeffhappily/while#readme>
+homepage:       https://github.com/jeffhappily/while#readme
+bug-reports:    https://github.com/jeffhappily/while/issues
+author:         Jeff
 maintainer:     example@example.com
-copyright:      2020 Author name here
+copyright:      2020 Jeff
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
@@ -23,19 +23,21 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/while
+  location: https://github.com/jeffhappily/while
 
 library
   exposed-modules:
-      Core.AST
+      AST
       Lib
+      Parser
   other-modules:
       Paths_while
   hs-source-dirs:
       src
-  ghc-options: -Wall
+  ghc-options: -Wall -fwarn-tabs
   build-depends:
       base >=4.7 && <5
+    , transformers
   default-language: Haskell2010
 
 executable while-exe
@@ -44,9 +46,10 @@ executable while-exe
       Paths_while
   hs-source-dirs:
       app
-  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -fwarn-tabs -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , transformers
     , while
   default-language: Haskell2010
 
@@ -57,8 +60,9 @@ test-suite while-test
       Paths_while
   hs-source-dirs:
       test
-  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -fwarn-tabs -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , transformers
     , while
   default-language: Haskell2010
