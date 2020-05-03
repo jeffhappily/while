@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c70f93bcb5eb5877d01f2ac0beb224fc7458ad37656d2999ec53d16aad60550a
+-- hash: d8c45a9f76764fcce1c993a4b00c4a5c31c3d19f5654dd3a4c9ca7c3d2731006
 
 name:           while
 version:        0.1.0.0
@@ -28,7 +28,6 @@ source-repository head
 library
   exposed-modules:
       AST
-      Lib
       Parser
   other-modules:
       Paths_while

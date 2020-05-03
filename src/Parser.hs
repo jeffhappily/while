@@ -223,3 +223,8 @@ paren p = bracket (symbol "(") p (symbol ")")
 variable :: Parser String
 variable = identifier ["if", "then", "else", "declare", "in", "while", "do", "print"]
 
+readExp :: String -> Either String Com
+readExp inp = 
+    case runParser (parse com) inp of
+        [(x, "")] -> Right x
+        _ -> Left "Parse Error"
