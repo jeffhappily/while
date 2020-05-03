@@ -1,4 +1,4 @@
-module Core.AST where
+module AST where
 
 data Exp
     = Constant Int
